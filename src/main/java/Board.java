@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Board {
     private Field[][] fieldsArr;
 
@@ -19,6 +21,19 @@ class Board {
 
     void show(){
 
+        System.out.println("  -------------------  ");
+        for (Field[] i: fieldsArr) {
+            StringBuilder sb = new StringBuilder("  |  ");
+
+            for (Field j: i) {
+                sb.append(j.value).append("  |  ");
+            }
+
+            System.out.println(sb.toString());
+            System.out.println("  -------------------  ");
+        }
+
     }
+
 
 }
