@@ -39,7 +39,19 @@ class Board {
     }
 
     void setField(int pos, String playerCharacter){
-
+        int counter = 0;
+        for (Field[] row: fieldsArr){
+            for(Field field: row){
+                if(counter == pos - 1){
+                    if(field.check()){
+                        field.setValue(playerCharacter);
+                    }else{
+                        System.out.println("U can't!");
+                    }
+                }
+                counter++;
+            }
+        }
     }
 
 

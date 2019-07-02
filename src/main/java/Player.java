@@ -25,5 +25,4 @@ class Player {
         int pos = getPosition();
         board.setField(pos, playerCharacter);
     }
-
 }
