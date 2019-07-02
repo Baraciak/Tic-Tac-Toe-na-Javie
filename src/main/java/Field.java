@@ -7,13 +7,11 @@ class Field {
 
 
     //checks is box is empty. If it is empty returns true
-    boolean check(Field field) {
+    boolean check() {
         return (this.value == " ");
-
-
     }
 
-    public void setValue(String value) {
+    void setValue(String value) {
         this.value = value;
     }
 }

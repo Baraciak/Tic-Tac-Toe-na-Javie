@@ -16,7 +16,6 @@ class Player {
         System.out.println("Enter position of your character:");
         int position = myObj.nextInt();
         System.out.println(position);
-        myObj.close();
         return position;
     }
 
