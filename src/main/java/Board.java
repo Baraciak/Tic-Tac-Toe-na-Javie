@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Board {
-    private Field[][] fieldsArr;
+    Field[][] fieldsArr;
 
 
     Board(int xSize, int ySize){
@@ -46,7 +46,8 @@ class Board {
                     if(field.check()){
                         field.setValue(playerCharacter);
                     }else{
-                        System.out.println("U can't!");
+                        //here it should take another input form user
+                        System.out.println("U can't! ######");
                     }
                 }
                 counter++;
