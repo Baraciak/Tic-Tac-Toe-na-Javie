@@ -5,9 +5,12 @@ class Board {
 
 
     Board(int xSize, int ySize){
-        String EMPTY_FIELD = " ";
         fieldsArr = new Field[ySize][xSize];
+        fillBoardArr(xSize, ySize);
+    }
 
+    private void fillBoardArr(int xSize, int ySize){
+        final String EMPTY_FIELD = " ";
 
         for(int j = 0; j < ySize; j++){
             Field[] tempArr = new Field[xSize];
@@ -22,16 +25,20 @@ class Board {
     void show(){
 
         System.out.println("  -------------------  ");
-        for (Field[] i: fieldsArr) {
+        for (Field[] fieldArr: fieldsArr) {
             StringBuilder sb = new StringBuilder("  |  ");
 
-            for (Field j: i) {
-                sb.append(j.value).append("  |  ");
+            for (Field field: fieldArr) {
+                sb.append(field.value).append("  |  ");
             }
 
             System.out.println(sb.toString());
             System.out.println("  -------------------  ");
         }
+
+    }
+
+    void setField(int pos, String playerCharacter){
 
     }
 
