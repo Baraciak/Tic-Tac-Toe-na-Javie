@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 class Gameplay {
+
     public static void main(String[] args) {
 
         Player player1 = new Player("Daro", "X");
