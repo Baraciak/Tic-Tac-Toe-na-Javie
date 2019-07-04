@@ -29,7 +29,7 @@ class Board {
             StringBuilder sb = new StringBuilder("  |  ");
 
             for (Field field: fieldArr) {
-                sb.append(field.value).append("  |  ");
+                sb.append(field.getValue()).append("  |  ");
             }
 
             System.out.println(sb.toString());
@@ -47,7 +47,6 @@ class Board {
                         field.setValue(playerCharacter);
                         return false;
                     }
-                        //here it should take another input form user
                 }
                 counter++;
             }

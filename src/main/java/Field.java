@@ -1,5 +1,5 @@
 class Field {
-    String value;
+    private String value;
 
     Field(String fieldValue) {
         value = fieldValue;
@@ -8,10 +8,14 @@ class Field {
 
     //checks is box is empty. If it is empty returns true
     boolean check() {
-        return (this.value == " ");
+        return (this.value.equals(" "));
     }
 
     void setValue(String value) {
         this.value = value;
+    }
+
+    String getValue() {
+        return value;
     }
 }
