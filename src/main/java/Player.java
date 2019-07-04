@@ -11,23 +11,32 @@ class Player {
     }
 
 
-    private int getPosition() {
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Enter position of your character:");
-        return myObj.nextInt();
-    }
-
-    void turn(Board board){
+    private int getPosition(Board board) {
         int boardLength = board.fieldsArr.length;
         int boardInsideArrLength = board.fieldsArr[1].length;
 
-        System.out.println(playerName + " (" + playerCharacter + ")" +  ", it's your turn!");
-        int pos = getPosition();
 
-        while (!(pos < (boardLength * boardInsideArrLength))){
+        Scanner myObj = new Scanner(System.in);
+        System.out.println("Enter position of your character:");
+        int position = myObj.nextInt();
+
+        //check if position from user is available
+        while (!(position <= (boardLength * boardInsideArrLength))){
             System.out.println("Selected field doesn't exist :( Please try again.");
-            pos = getPosition();
+            position = getPosition(board);
         }
-        board.setField(pos, playerCharacter);
+        return position;
     }
+
+    void turn(Board board){
+        System.out.println(playerName + " (" + playerCharacter + ")" +  ", it's your turn!");
+
+        int pos = getPosition(board);
+
+        while(board.setField(pos, playerCharacter)){
+            System.out.println("Field is already taken. Watch game board!");
+            pos = getPosition(board);
+        }
+    }
+
 }

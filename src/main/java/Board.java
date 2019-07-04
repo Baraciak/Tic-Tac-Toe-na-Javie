@@ -38,21 +38,21 @@ class Board {
 
     }
 
-    void setField(int pos, String playerCharacter){
+    boolean setField(int pos, String playerCharacter){
         int counter = 0;
         for (Field[] row: fieldsArr){
             for(Field field: row){
                 if(counter == pos - 1){
                     if(field.check()){
                         field.setValue(playerCharacter);
-                    }else{
-                        //here it should take another input form user
-                        System.out.println("U can't! ######");
+                        return false;
                     }
+                        //here it should take another input form user
                 }
                 counter++;
             }
         }
+        return true;
     }
 
 
