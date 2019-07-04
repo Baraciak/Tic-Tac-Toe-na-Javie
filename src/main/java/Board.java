@@ -55,7 +55,6 @@ class Board {
     }
 
 
-
     private Field findField(int pos, Board board){
         int counter = 1;
         for (Field[] row: fieldsArr){
