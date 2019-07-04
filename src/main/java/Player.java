@@ -18,7 +18,7 @@ class Player {
             System.out.println("Field is already taken. Watch game board!");
             pos = getPosition(board);
         }
-
+        board.checkWin(pos, playerCharacter);
     }
 
 
@@ -29,7 +29,8 @@ class Player {
         int position = UI.getUserInput();
 
         //check if position from user is available
-        while (!(position <= (boardLength * boardInsideArrLength))){
+        //if position isn't > 0 OR position is not in the board range
+        while ( !(position > 0) || !(position <= (boardLength * boardInsideArrLength)) ){
             System.out.println("Selected field doesn't exist :( Please try again.");
             position = getPosition(board);
         }

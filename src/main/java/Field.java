@@ -1,8 +1,12 @@
 class Field {
     private String value;
+    int x;
+    int y;
 
-    Field(String fieldValue) {
+    Field(String fieldValue, int yCord, int xCord) {
         value = fieldValue;
+        y = yCord;
+        x = xCord;
     }
 
 

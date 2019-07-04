@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Gameplay {
     public static void main(String[] args) {
         boolean game = true;
